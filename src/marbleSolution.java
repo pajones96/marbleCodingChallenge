@@ -1,9 +1,30 @@
 import java.util.Locale;
+import java.util.HashSet;
 
 public class marbleSolution {
 
+    /*
+     * Current idea is to first sort the marbles by just immediately placing them in "Bins" (hashsets) based on color.
+     * After that, filter out all marbles in the bins with weight < 0.5.
+     * Then filter out non-palindromic names.
+     * Then sort by ID.
+     * I think it's best to do it this way because Color is an over-arching order and immediately gets you closer to a
+     * totally ordered set. Then weight for each, which is an easy binary choice and should immediately drop a large
+     * amount. Checking the names comes last because iterating over every name is gonna be slow and costly regardless,
+     * so it's best to minimize the number of times you have to do that. Finally sort by id ascending order and combine
+     * for the final product. There's probably ways to optimize further but I think this is fine even for large-ish
+     * datasets.
+     */
     public static void main(String[] args) {
         System.out.println("Here's where the solution goes");
+
+        HashSet<Marble> redBin = new HashSet<Marble>();
+        HashSet<Marble> orangeBin = new HashSet<Marble>();
+        HashSet<Marble> yellowBin = new HashSet<Marble>();
+        HashSet<Marble> greenBin = new HashSet<Marble>();
+        HashSet<Marble> blueBin = new HashSet<Marble>();
+        HashSet<Marble> indigoBin = new HashSet<Marble>();
+        HashSet<Marble> violetBin = new HashSet<Marble>();
     }
 
     /*
