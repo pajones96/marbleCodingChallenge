@@ -3,6 +3,10 @@ import java.util.HashSet;
 
 public class marbleSolution {
 
+    //This would be initialized to be the full collection of marbles.
+    //Probably need to read it in from the... JSON it's stored as?
+    private static HashSet<Marble> fullCollection = new HashSet<>();
+
     /*
      * Current idea is to first sort the marbles by just immediately placing them in "Bins" (hashsets) based on color.
      * After that, filter out all marbles in the bins with weight < 0.5.
@@ -25,6 +29,38 @@ public class marbleSolution {
         HashSet<Marble> blueBin = new HashSet<Marble>();
         HashSet<Marble> indigoBin = new HashSet<Marble>();
         HashSet<Marble> violetBin = new HashSet<Marble>();
+
+        //Iterates through the full collection and places it into the appropriate bin.
+        for (Marble m : fullCollection) {
+            switch (m.color) {
+                case "red":
+                    redBin.add(m);
+                    break;
+                case "orange":
+                    orangeBin.add(m);
+                    break;
+                case "yellow":
+                    yellowBin.add(m);
+                    break;
+                case "green":
+                    greenBin.add(m);
+                    break;
+                case "blue":
+                    blueBin.add(m);
+                    break;
+                case "indigo":
+                    indigoBin.add(m);
+                    break;
+                case "violet" :
+                    violetBin.add(m);
+                    break;
+                default:
+                    break;
+
+            }
+        }
+
+
     }
 
     /*
