@@ -60,6 +60,9 @@ public class marbleSolution {
             }
         }
 
+        //Up next, go through each of the bins to empty out all the non-palindromic ones.
+        //This could end up looking gross, so maybe in the future rearrange the order of steps? We'll see
+
 
     }
 
