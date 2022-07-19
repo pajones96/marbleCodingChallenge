@@ -62,7 +62,44 @@ public class marbleSolution {
 
         //Up next, go through each of the bins to empty out all the non-palindromic ones.
         //This could end up looking gross, so maybe in the future rearrange the order of steps? We'll see
+        for (Marble m: redBin) {
+            if (isPalindrome(m.name) == false){
+                redBin.remove(m);
+            }
+        }
+        for (Marble m: orangeBin) {
+            if (isPalindrome(m.name) == false){
+                orangeBin.remove(m);
+            }
+        }
+        for (Marble m: yellowBin) {
+            if (isPalindrome(m.name) == false){
+                yellowBin.remove(m);
+            }
+        }
+        for (Marble m: greenBin) {
+            if (isPalindrome(m.name) == false){
+                greenBin.remove(m);
+            }
+        }
+        for (Marble m: blueBin) {
+            if (isPalindrome(m.name) == false){
+                blueBin.remove(m);
+            }
+        }
+        for (Marble m: indigoBin) {
+            if (isPalindrome(m.name) == false){
+                indigoBin.remove(m);
+            }
+        }
+        for (Marble m: violetBin) {
+            if (isPalindrome(m.name) == false){
+                violetBin.remove(m);
+            }
+        }
 
+        //...Alright yeah, admittedly that looks pretty gross. I'm sure it can be cleaned up, and it certainly wouldn't
+        // be terribly difficult.
 
     }
 
