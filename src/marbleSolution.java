@@ -15,8 +15,8 @@ public class marbleSolution {
      * I think it's best to do it this way because Color is an over-arching order and immediately gets you closer to a
      * totally ordered set. Then weight for each, which is an easy binary choice and should immediately drop a large
      * amount. Checking the names comes last because iterating over every name is gonna be slow and costly regardless,
-     * so it's best to minimize the number of times you have to do that. Finally sort by id ascending order and combine
-     * for the final product. There's probably ways to optimize further but I think this is fine even for large-ish
+     * so it's best to minimize the number of times you have to do that. Finally, sort by id ascending order and combine
+     * for the final product. There's probably ways to optimize further, but I think this is fine even for large-ish
      * datasets.
      */
     public static void main(String[] args) {
@@ -99,7 +99,7 @@ public class marbleSolution {
         }
 
         //...Alright yeah, admittedly that looks pretty gross. I'm sure it can be cleaned up, and it certainly wouldn't
-        // be terribly difficult.
+        // be terribly difficult. But it's also probably fine for now.
 
     }
 
@@ -108,10 +108,10 @@ public class marbleSolution {
      * grokking and probably a little simpler to interact with, code-wise.
      */
     class Marble {
-        int id;
+        Integer id;
         String color = "";
         String name = "";
-        float weight;
+        Float weight;
 
         //One constructor because this is a practice problem, it's not hard to add more or change it to handle missing data
         public Marble (int i, String c, String n, float w){
@@ -119,6 +119,14 @@ public class marbleSolution {
             this.color = c;
             this.name = n;
             this.weight = w;
+        }
+
+        @Override
+        public String toString(){
+            return "id: " + this.id.toString() + ", "
+                    + "color: " + this.color + ", "
+                    + "name: " + this.name + ", "
+                    + "weight: " + this.weight.toString();
         }
     }
 
