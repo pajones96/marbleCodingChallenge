@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.HashSet;
 
@@ -101,6 +103,17 @@ public class marbleSolution {
         //...Alright yeah, admittedly that looks pretty gross. I'm sure it can be cleaned up, and it certainly wouldn't
         // be terribly difficult. But it's also probably fine for now.
 
+        List<Marble> filteredCollection = new ArrayList<>();
+
+        //Didn't want to use a parameterized constructor call because it'd only take one, afaik
+        //Also I like the... not symmetry, but... neatness of this? I dunno.
+        filteredCollection.addAll(redBin);
+        filteredCollection.addAll(yellowBin);
+        filteredCollection.addAll(orangeBin);
+        filteredCollection.addAll(greenBin);
+        filteredCollection.addAll(blueBin);
+        filteredCollection.addAll(indigoBin);
+        filteredCollection.addAll(violetBin);
     }
 
     /*
