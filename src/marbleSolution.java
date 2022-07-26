@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.HashSet;
+import java.util.*;
 
 public class marbleSolution {
 
@@ -114,13 +111,17 @@ public class marbleSolution {
         filteredCollection.addAll(blueBin);
         filteredCollection.addAll(indigoBin);
         filteredCollection.addAll(violetBin);
+
+        //got to quickly figure out the sorting, hold on
+        //I always forget how wonky comparator is.
+
     }
 
     /*
      * Is it super necessary to make an inner class for this? Maybe not. But I think it makes it cleaner and faster for
      * grokking and probably a little simpler to interact with, code-wise.
      */
-    class Marble {
+    class Marble implements Comparator<Marble>, Comparable<Marble> {
         Integer id;
         String color = "";
         String name = "";
@@ -140,6 +141,18 @@ public class marbleSolution {
                     + "color: " + this.color + ", "
                     + "name: " + this.name + ", "
                     + "weight: " + this.weight.toString();
+        }
+
+        //Let's hope this works. Gotta test this properly soon
+        @Override
+        public int compare(Marble o1, Marble o2) {
+            return o1.id - o2.id;
+        }
+
+        //This'n too
+        @Override
+        public int compareTo(Marble m4){
+            return (this.id).compareTo(m4.id);
         }
     }
 
