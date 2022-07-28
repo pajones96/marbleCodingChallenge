@@ -5,6 +5,7 @@ public class marbleSolution {
     //This would be initialized to be the full collection of marbles.
     //Probably need to read it in from the... JSON it's stored as?
     private static HashSet<Marble> fullCollection = new HashSet<>();
+    private Comparator<Marble> comparisonThing;
 
     /*
      * Current idea is to first sort the marbles by just immediately placing them in "Bins" (hashsets) based on color.
@@ -114,6 +115,7 @@ public class marbleSolution {
 
         //got to quickly figure out the sorting, hold on
         //I always forget how wonky comparator is.
+        filteredCollection.sort();
 
     }
 
@@ -196,5 +198,6 @@ public class marbleSolution {
         output = output.replaceAll("-", "");
         return output;
     }
+
 
 }
